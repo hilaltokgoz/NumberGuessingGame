@@ -6,9 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.numberguessinggame.databinding.FragmentHomePageBinding
 
 class HomePageFragment : Fragment() {
-
+    //Fragment'ta viewBinding kurulumu
+    private var _binding: FragmentHomePageBinding?=null
+    //lateinit var olarak tanımlanmadığı için default olarak null değeri verildi.
+    private val binding get()=_binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,15 +23,17 @@ class HomePageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding= FragmentHomePageBinding.inflate(inflater)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_page, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
-
+    //Oluşturulan view kapandığında yapılmasını istediklerimizi yazacağımız fonksiyondur.
     override fun onDestroyView() {
         super.onDestroyView()
+        _binding=null //ui ile ilgili veriler gereksiz yer kaplamasın diye
     }
 }
