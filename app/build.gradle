@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id("androidx.navigation.safeargs.kotlin")
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 31
@@ -48,4 +49,9 @@ dependencies {
     //Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.0-alpha01")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.0-alpha01")
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+/////////////////////////////    mavenCentral()
 }

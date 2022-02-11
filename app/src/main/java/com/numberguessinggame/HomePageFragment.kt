@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.numberguessinggame.databinding.FragmentHomePageBinding
 
 class HomePageFragment : Fragment() {
@@ -30,6 +31,16 @@ class HomePageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//anasayfadan tahmin sayfasına geçiş işlemi
+   binding.playButton.setOnClickListener {
+       findNavController().navigate(R.id.homePageToPrediction)
+   }
+
+
+
+
+
+
     }
     //Oluşturulan view kapandığında yapılmasını istediklerimizi yazacağımız fonksiyondur.
     override fun onDestroyView() {

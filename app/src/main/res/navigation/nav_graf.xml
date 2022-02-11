@@ -34,5 +34,9 @@
         android:id="@+id/resultFragment"
         android:name="com.numberguessinggame.ResultFragment"
         android:label="fragment_result"
-        tools:layout="@layout/fragment_result" />
+        tools:layout="@layout/fragment_result" >
+        <argument
+            android:name="result"
+            app:argType="string" />
+    </fragment>
 </navigation>
